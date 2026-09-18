@@ -1,39 +1,39 @@
-name: Build EBENS Gadget Universe APK
+name: Build Laz B Empire APK
 
 on:
   workflow_dispatch:
   push:
     branches: ["main"]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: stable
           flutter-version: "3.35.7"
-
-      - name: Generate Android project
+          channel: stable
+          cache: true
+      - name: Create Android project
         run: |
-          rm -rf /tmp/ebens_app
-          flutter create --platforms=android --project-name ebens_gadget_universe --org com.ebensgadget /tmp/ebens_app
-          cp demo_source/pubspec.yaml /tmp/ebens_app/pubspec.yaml
-          cp demo_source/lib/main.dart /tmp/ebens_app/lib/main.dart
-          cd /tmp/ebens_app
+          flutter create --platforms=android --org com.lazbempire /tmp/laz_app
+          rm -rf /tmp/laz_app/lib
+          cp -R flutter_app/lib /tmp/laz_app/lib
+          cp flutter_app/pubspec.yaml /tmp/laz_app/pubspec.yaml
+          cd /tmp/laz_app
           flutter pub get
-
       - name: Build release APK
         run: |
-          cd /tmp/ebens_app
+          cd /tmp/laz_app
           flutter build apk --release
-
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: ebens-gadget-universe-demo-apk
-          path: /tmp/ebens_app/build/app/outputs/flutter-apk/app-release.apk
+          name: laz-b-empire-apk
+          path: /tmp/laz_app/build/app/outputs/flutter-apk/app-release.apk

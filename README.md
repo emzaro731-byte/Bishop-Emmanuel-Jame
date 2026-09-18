@@ -1,36 +1,19 @@
-# EBENS GADGET UNIVERSE — Demo App
+# Laz B Empire
 
-Flutter Android demo prepared for EBENS GADGET UNIVERSE, Shop 59, Everyday Supermarket Plaza, Choba, UNIPORT, Port Harcourt.
+Demo project for Laz B Empire, the fashion accessories store beside FirstBank, Choba Campus/UNIPORT, Port Harcourt.
 
-## Demo features
-- Product catalogue
-- Categories
-- Product details
-- Shopping cart
-- Demo checkout
-- Store contact/location
-- Orders and customer tabs
+## Included
+- Flutter Android app source in `flutter_app/`
+- GitHub Actions workflow for a release APK
+- Responsive website in `website/`
+- GitHub Pages deployment workflow
+- WhatsApp ordering to 0814 049 9272
+- Store location and opening hours shown on the Google Maps listing
 
-## Build
-Open GitHub Actions and run **Build EBENS Gadget Universe APK**. The release APK will be uploaded as a workflow artifact.
+The catalogue is a demo. Replace it with the owner's real product photos, names and prices after approval.
 
-This is a sales demo. Real payments, inventory, authentication, delivery tracking and admin management can be connected after the business approves the project.
+### APK
+GitHub → Actions → **Build Laz B Empire APK** → Run workflow. Download the APK from the completed workflow's Artifacts section.
 
-
-## Matching website
-
-A responsive website matching the Android demo is included in `website/`.
-
-### Website features
-- Same purple visual identity and navigation style as the Android app
-- Shop, Orders and Account sections
-- Search and category filters
-- Product details and cart
-- Demo checkout
-- Store location and phone
-- Mobile-first responsive layout for phones and desktop
-
-### Publish the website
-Open **GitHub Actions** and run **Deploy EBENS Gadget Universe Website**. If Pages is not enabled yet, go to the repository's **Settings → Pages** and select **GitHub Actions** as the source.
-
-The website uses the same sample products/prices as the app for demonstration only. Replace them with EBENS GADGET UNIVERSE's real inventory before production.
+### Website
+GitHub → Settings → Pages → choose **GitHub Actions** as the source. Then run **Deploy Laz B Empire Website** from Actions.
