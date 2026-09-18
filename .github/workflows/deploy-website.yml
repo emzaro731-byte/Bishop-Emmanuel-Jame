@@ -1,19 +1,15 @@
-name: Deploy Laz B Empire Website
-
+name: Deploy Laz B Empire Websites
 on:
   workflow_dispatch:
   push:
     branches: ["main"]
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: true
-
 jobs:
   deploy:
     environment:
@@ -21,19 +17,19 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-      - name: Prepare website
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Prepare websites
         run: |
           rm -rf _site
-          mkdir -p _site
-          cp website/index.html website/style.css website/app.js _site/
-      - name: Upload website
-        uses: actions/upload-pages-artifact@v3
+          mkdir -p _site/customer _site/owner
+          cp website/customer/index.html _site/customer/
+          cp website/customer.js _site/
+          cp website/owner/index.html _site/owner/
+          cp website/owner.js _site/
+          cp website/shared.css _site/
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-      - name: Deploy website
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
