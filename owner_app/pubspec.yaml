@@ -1,0 +1,13 @@
+name: laz_b_empire_owner
+description: Laz B Empire owner management app
+publish_to: "none"
+version: 1.0.0+1
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  supabase_flutter: ^2.0.0
+  image_picker: ^1.0.0
+flutter:
+  uses-material-design: true
