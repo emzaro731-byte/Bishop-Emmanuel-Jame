@@ -1,0 +1,54 @@
+name: Build Laz B Empire Customer and Owner Apps
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  customer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.35.7"
+          channel: stable
+          cache: true
+      - run: flutter create --platforms=android --org com.lazbempire.customer /tmp/customer
+      - run: |
+          rm -rf /tmp/customer/lib
+          cp -R customer_app/lib /tmp/customer/lib
+          cp customer_app/pubspec.yaml /tmp/customer/pubspec.yaml
+          cd /tmp/customer
+          flutter pub get
+          flutter build apk --release --dart-define=SUPABASE_URL=${{ secrets.SUPABASE_URL }} --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: laz-b-empire-customer-apk
+          path: /tmp/customer/build/app/outputs/flutter-apk/app-release.apk
+
+  owner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.35.7"
+          channel: stable
+          cache: true
+      - run: flutter create --platforms=android --org com.lazbempire.owner /tmp/owner
+      - run: |
+          rm -rf /tmp/owner/lib
+          cp -R owner_app/lib /tmp/owner/lib
+          cp owner_app/pubspec.yaml /tmp/owner/pubspec.yaml
+          cd /tmp/owner
+          flutter pub get
+          flutter build apk --release --dart-define=SUPABASE_URL=${{ secrets.SUPABASE_URL }} --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: laz-b-empire-owner-apk
+          path: /tmp/owner/build/app/outputs/flutter-apk/app-release.apk
