@@ -533,8 +533,6 @@ class _StoreShellState extends State<StoreShell> {
     );
   }
 
-  void removeFromCart(int index) => setState(() => cart.removeAt(index));
-
   Widget _store() => ListView(
     padding: const EdgeInsets.fromLTRB(14, 18, 14, 30),
     children: [
