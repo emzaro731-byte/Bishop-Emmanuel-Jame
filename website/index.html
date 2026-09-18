@@ -1,7 +1,81 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Laz B Empire | Fashion Accessories</title><meta name="description" content="Laz B Empire fashion accessories store in Choba, Port Harcourt."><link rel="stylesheet" href="style.css"></head><body>
-<header class="nav"><a class="brand" href="#home">LAZ B EMPIRE</a><nav><a href="#shop">Shop</a><a href="#about">About</a><a class="nav-wa" href="https://wa.me/2348140499272" target="_blank" rel="noopener">WhatsApp</a></nav></header>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111018">
+<meta name="description" content="Laz B Empire — fashion accessories in Choba, Port Harcourt. Browse categories and order directly on WhatsApp.">
+<title>Laz B Empire | Fashion Accessories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announcement">✨ New arrivals &amp; everyday style — order directly on WhatsApp</div>
+<header class="nav">
+  <a class="brand" href="#home"><span>LAZ B</span> EMPIRE</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav id="navMenu">
+    <a href="#shop">Shop</a><a href="#about">About</a><a href="#visit">Visit</a>
+    <a class="nav-wa" href="https://wa.me/2348140499272" target="_blank" rel="noopener">WhatsApp</a>
+  </nav>
+</header>
+
 <main>
-<section class="hero" id="home"><div class="hero-copy"><span class="eyebrow">CHOBA • PORT HARCOURT</span><h1>Find the accessory that completes your style.</h1><p>Explore Laz B Empire's fashion accessories and order directly through WhatsApp.</p><div class="actions"><a class="btn primary" href="#shop">Browse collection</a><a class="btn ghost" href="https://wa.me/2348140499272?text=Hello%20Laz%20B%20Empire%2C%20I%20would%20like%20to%20make%20an%20order." target="_blank" rel="noopener">Chat on WhatsApp</a></div></div><div class="hero-card"><div class="hero-icon">✦</div><p>Fashion accessories</p><strong>Shop • Chat • Pickup</strong></div></section>
-<section class="section" id="shop"><div class="section-head"><div><span class="eyebrow">COLLECTION</span><h2>Featured categories</h2></div><input id="search" type="search" placeholder="Search accessories"></div><div class="chips" id="chips"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="Bags">Bags</button><button class="chip" data-filter="Watches">Watches</button><button class="chip" data-filter="Jewelry">Jewelry</button><button class="chip" data-filter="Sunglasses">Sunglasses</button><button class="chip" data-filter="Accessories">Accessories</button></div><div class="grid" id="products"></div><p class="demo-note">Demo catalogue: replace these category cards with Laz B Empire's actual products, photos and prices.</p></section>
-<section class="split section" id="about"><div><span class="eyebrow">VISIT THE STORE</span><h2>Laz B Empire, Choba</h2><p>Beside FirstBank, Choba Campus/UNIPORT, Port Harcourt 500102, Rivers.</p><div class="contact-row"><a class="btn primary" href="tel:+2348140499272">Call 0814 049 9272</a><a class="btn ghost" href="https://wa.me/2348140499272" target="_blank" rel="noopener">WhatsApp</a></div></div><div class="info-card"><h3>Opening hours</h3><p>Monday–Friday <b>7:30am–9:30pm</b></p><p>Saturday <b>7:30am–8:00pm</b></p><p>Sunday <b>Closed</b></p><small>Hours shown from the Google Maps listing.</small></div></section>
-</main><footer><strong>LAZ B EMPIRE</strong><span>Fashion accessories • Choba, Port Harcourt</span></footer><script src="app.js"></script></body></html>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <span class="eyebrow">CHOBA • PORT HARCOURT</span>
+    <h1>Style starts with the <em>right detail.</em></h1>
+    <p>Discover fashion accessories from Laz B Empire and make your next look stand out. Browse the collection, then order or ask about availability on WhatsApp.</p>
+    <div class="actions">
+      <a class="btn primary" href="#shop">Explore collection <span>↗</span></a>
+      <a class="btn ghost" href="https://wa.me/2348140499272?text=Hello%20Laz%20B%20Empire%2C%20I%20would%20like%20to%20see%20your%20latest%20items." target="_blank" rel="noopener">Chat with us</a>
+    </div>
+    <div class="trust-row"><span>✓ Direct WhatsApp ordering</span><span>✓ Choba pickup</span></div>
+  </div>
+  <div class="hero-visual">
+    <div class="orb orb-one"></div><div class="orb orb-two"></div>
+    <div class="hero-panel"><span class="spark">✦</span><small>LAZ B EMPIRE</small><strong>ACCESSORIES<br>FOR YOUR<br>NEXT LOOK.</strong><span class="panel-line"></span><span>Shop • Chat • Pickup</span></div>
+  </div>
+</section>
+
+<section class="stats">
+  <div><strong>6+</strong><span>Style categories</span></div>
+  <div><strong>Choba</strong><span>Local pickup area</span></div>
+  <div><strong>WhatsApp</strong><span>Fast order channel</span></div>
+</section>
+
+<section class="section" id="shop">
+  <div class="section-head">
+    <div><span class="eyebrow">THE COLLECTION</span><h2>Find your next favourite.</h2><p>Choose a category or search the demo catalogue.</p></div>
+    <label class="searchbox"><span>⌕</span><input id="search" type="search" placeholder="Search accessories" aria-label="Search accessories"></label>
+  </div>
+  <div class="chips" id="chips">
+    <button class="chip active" data-filter="all">All</button><button class="chip" data-filter="Bags">Bags</button><button class="chip" data-filter="Watches">Watches</button><button class="chip" data-filter="Jewelry">Jewelry</button><button class="chip" data-filter="Sunglasses">Sunglasses</button><button class="chip" data-filter="Accessories">Accessories</button>
+  </div>
+  <div class="grid" id="products"></div>
+  <div class="catalogue-note"><span>◎</span><div><strong>Want to see real stock?</strong><br>Message Laz B Empire on WhatsApp for current items, colours, sizes and prices.</div><a href="https://wa.me/2348140499272?text=Hello%20Laz%20B%20Empire%2C%20please%20send%20me%20your%20current%20catalogue." target="_blank" rel="noopener">Request catalogue →</a></div>
+</section>
+
+<section class="order-section">
+  <div><span class="eyebrow">QUICK ORDER</span><h2>Tell us what you need.</h2><p>Send a simple request and continue the conversation on WhatsApp.</p></div>
+  <form id="orderForm" class="order-form">
+    <input id="customerName" required placeholder="Your name">
+    <select id="itemChoice" required><option value="">Choose an item</option><option>Handbags</option><option>Wrist Watches</option><option>Jewelry</option><option>Sunglasses</option><option>Belts</option><option>Fashion Accessories</option></select>
+    <select id="orderType"><option>Pickup in Choba</option><option>Ask about delivery</option></select>
+    <button class="btn primary" type="submit">Continue on WhatsApp ↗</button>
+  </form>
+</section>
+
+<section class="split section" id="about">
+  <div class="about-card"><span class="eyebrow">ABOUT LAZ B EMPIRE</span><h2>Accessories made for everyday expression.</h2><p>Use this website to explore categories and contact the store directly. Product photos, names and prices can be updated as the catalogue grows.</p><div class="contact-row"><a class="btn primary" href="tel:+2348140499272">Call 0814 049 9272</a><a class="btn ghost" href="https://wa.me/2348140499272" target="_blank" rel="noopener">Message us</a></div></div>
+  <div class="info-card" id="visit"><span class="eyebrow">FIND US</span><h3>Visit the store</h3><p>Beside FirstBank, Choba Campus/UNIPORT, Port Harcourt 500102, Rivers.</p><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Laz+B+Empire%2C+Beside+FirstBank%2C+Choba%2C+Port+Harcourt%2C+Rivers%2C+Nigeria" target="_blank" rel="noopener">Open in Google Maps ↗</a><div class="hours"><p><span>Monday–Friday</span><b>7:30am–9:30pm</b></p><p><span>Saturday</span><b>7:30am–8:00pm</b></p><p><span>Sunday</span><b>Closed</b></p></div></div>
+</section>
+</main>
+
+<div class="mobile-bar"><a href="tel:+2348140499272">Call</a><a href="https://wa.me/2348140499272" target="_blank" rel="noopener">WhatsApp</a></div>
+<footer><div><strong>LAZ B EMPIRE</strong><span>Fashion accessories • Choba, Port Harcourt</span></div><span>© <span id="year"></span> Laz B Empire</span></footer>
+<script src="app.js"></script>
+</body>
+</html>
