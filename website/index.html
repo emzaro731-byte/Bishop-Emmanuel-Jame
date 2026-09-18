@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#5e35b1">
+  <meta name="description" content="EBENS GADGET UNIVERSE — Shop phones, laptops, accessories and gaming gadgets in Choba, Port Harcourt.">
+  <title>EBENS GADGET UNIVERSE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="appbar">
+  <div class="brand"><span class="brand-icon">E</span><span>EBENS GADGET UNIVERSE</span></div>
+  <button id="cartBtn" class="icon-btn" aria-label="Shopping cart">🛒<span id="cartBadge" class="badge hidden">0</span></button>
+</header>
+
+<main id="shopView" class="page">
+  <section class="hero">
+    <div>
+      <h1>Gadgets you want.</h1>
+      <p>Shop phones, laptops and accessories from EBENS GADGET UNIVERSE.</p>
+    </div>
+  </section>
+
+  <label class="search">
+    <span>⌕</span>
+    <input id="searchInput" type="search" placeholder="Search phones, gadgets..." autocomplete="off">
+  </label>
+
+  <div id="categories" class="chips"></div>
+
+  <div class="section-head">
+    <h2>Popular products</h2>
+    <span id="itemCount">0 items</span>
+  </div>
+  <section id="products" class="products"></section>
+
+  <section class="store-card">
+    <div class="store-icon">⌖</div>
+    <div>
+      <h3>Visit our store</h3>
+      <p>Shop 59, Everyday Supermarket Plaza, Choba, UNIPORT, Port Harcourt</p>
+    </div>
+    <button id="storeBtn" class="ghost">View</button>
+  </section>
+</main>
+
+<main id="ordersView" class="page hidden">
+  <section class="empty">
+    <div class="empty-icon">▤</div>
+    <h2>Your orders</h2>
+    <p>Orders will appear here after checkout.</p>
+  </section>
+</main>
+
+<main id="accountView" class="page hidden">
+  <section class="account">
+    <div class="avatar">👤</div>
+    <h2>Guest customer</h2>
+    <div class="info-card"><span>☎</span><div><b>Call store</b><small>0806 023 2119</small></div></div>
+    <div class="info-card"><span>⌖</span><div><b>Store location</b><small>Choba, UNIPORT, Port Harcourt</small></div></div>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <button class="nav-item active" data-view="shopView"><span>⌂</span><small>Shop</small></button>
+  <button class="nav-item" data-view="ordersView"><span>▤</span><small>Orders</small></button>
+  <button class="nav-item" data-view="accountView"><span>♙</span><small>Account</small></button>
+</nav>
+
+<div id="modal" class="modal hidden">
+  <div class="backdrop"></div>
+  <div id="modalCard" class="modal-card"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
