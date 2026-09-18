@@ -1,0 +1,39 @@
+name: Build EBENS Gadget Universe APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.35.7"
+
+      - name: Generate Android project
+        run: |
+          rm -rf /tmp/ebens_app
+          flutter create --platforms=android --project-name ebens_gadget_universe --org com.ebensgadget /tmp/ebens_app
+          cp demo_source/pubspec.yaml /tmp/ebens_app/pubspec.yaml
+          cp demo_source/lib/main.dart /tmp/ebens_app/lib/main.dart
+          cd /tmp/ebens_app
+          flutter pub get
+
+      - name: Build release APK
+        run: |
+          cd /tmp/ebens_app
+          flutter build apk --release
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: ebens-gadget-universe-demo-apk
+          path: /tmp/ebens_app/build/app/outputs/flutter-apk/app-release.apk
